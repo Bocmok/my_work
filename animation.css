@@ -1,0 +1,162 @@
+
+.navmob__bur,
+.navmob__line,
+.post__bg,
+.sub__text{
+	transition: all .3s;
+}
+
+.navmob:hover .navmob__line_1{
+	transform: rotate(45deg) translate(6px, 5px);
+}
+
+.navmob:hover .navmob__line_2{
+	opacity: 0
+}
+
+.navmob:hover .navmob__line_3{
+	transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.head_name{
+	transform: translateX(-200%);
+	animation: head 1s forwards;
+}
+
+.head_desc{
+	transform: translateX(-200%);
+	animation: head .5s .4s forwards;
+}
+
+.head_bg{
+	transform: rotate(10deg) translateX(-20px);
+}
+
+@keyframes head{
+
+	0%{
+		transform: translateX(-200%);
+	}
+
+	100%{
+		transform: translateX(0);
+	}
+
+}
+
+.bul_content{
+	perspective: 150px;
+	perspective-origin: 50% 74px;
+}
+
+.bul_pic{
+	transition: 1s;
+	margin: 20px 0;	
+}
+
+.bul_content:hover .bul_pic{
+	transform: rotateY(-360deg);
+}
+
+.post__head{
+	overflow: hidden;
+	
+}
+
+.post__bg{
+	text-align: center;
+	bottom: 50%;	
+	left: 10%;	
+	right: 10%;	
+	width: auto;
+	transform: translateY(300%) scale(2);
+	opacity: 0;	
+}
+
+.post__name{
+	margin: 0 5px;
+}
+
+.post__bg::after,
+.post__bg::before,
+.post__name::after,
+.post__name::before{
+	content: '';
+	position: absolute;	
+	background: rgba(255, 255, 255, 0.7);	
+}
+
+.post__bg::before{
+	top: -5px;	
+	left:0;
+	height: 5px;
+}
+
+.post__bg::after{
+	bottom: -5px;	
+	right: 0;
+	height: 5px;	
+}
+
+.post__name::after{
+	top: 0;
+	width: 5px;
+	right: -5px;
+	height: 0;
+}
+
+.post__name::before{
+	bottom: 0;
+	width: 5px;
+	left: -5px;
+}
+
+@keyframes width{
+	0%{
+		width: 0;
+	}
+
+	100%{
+		width: calc(100% + 5px);
+	}
+}
+
+@keyframes height{
+	0%{
+		height: 0;
+	}
+
+	100%{
+		height: calc(100% + 5px);
+	}
+}
+
+.post_content:hover .post__bg{
+	transform: translateY(50%) scale(1);
+	opacity: 1;
+}
+
+.post_content:hover .post__bg::before{
+	animation: width 1s linear forwards;
+}
+
+.post_content:hover .post__name::after{
+	animation: height .3s linear 1s forwards;
+}
+
+.post_content:hover .post__bg::after{
+	animation: width 1s linear 1.3s forwards;
+}
+
+.post_content:hover .post__name::before{
+	animation: height .3s linear 2.3s forwards;
+}
+
+.sub__text{
+	background-size: 24px;
+}
+
+.sub__text:focus{
+	-webkit-background-size: 32px;
+	background-size: 32px;
+}
